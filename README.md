@@ -309,9 +309,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Sudhanshu Sharma**
 
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername)
+- LinkedIn: https://www.linkedin.com/in/sudhanshu-sharma-55298a327/
+- GitHub: [@elijah9537](https://github.com/elijah9537)
 
 ---
 
@@ -325,7 +324,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-For support, email your.email@example.com or open an issue on GitHub.
+open an issue on GitHub.
 
 ---
 
