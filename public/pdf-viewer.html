@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PDF Preview</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; background: #0b0c0e0a; }
+    .toolbar {
+      display: flex; align-items: center; gap: 8px; padding: 8px 12px;
+      border-bottom: 1px solid #e2e8f0; background: #fff; position: sticky; top: 0; z-index: 10;
+    }
+    .btn { appearance: none; border: 1px solid #cbd5e1; background: #f8fafc; color: #0f172a; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+    .btn:hover { background: #eef2f7; }
+    .spacer { flex: 1; }
+    #viewer { display: grid; place-items: start center; padding: 16px; }
+    canvas { background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.07); border-radius: 6px; }
+    .status { text-align: center; padding: 16px; color: #64748b; }
+    .error { color: #b91c1c; }
+  </style>
+  <!-- PDF.js via CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" integrity="sha512-3i3PXPb++m1i8I0h1qvS0O1oVJnVZq3K2xwVx3HCEohh0fI0FupgV7l3+0QyGmOZ+9mS8f2j7dX9+Q8/8zq5qQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+  <div class="toolbar">
+    <button class="btn" id="prev">Prev</button>
+    <button class="btn" id="next">Next</button>
+    <span id="pageInfo">Page <span id="page_num">1</span> / <span id="page_count">?</span></span>
+    <div class="spacer"></div>
+    <button class="btn" id="zoom_out">-</button>
+    <button class="btn" id="zoom_in">+</button>
+    <a class="btn" id="download" href="#" download>Download</a>
+  </div>
+
+  <div id="viewer">
+    <div class="status" id="status">Loading PDF…</div>
+    <canvas id="the-canvas" style="display:none"></canvas>
+  </div>
+
+  <script>
+    // Configure worker
+    if (window.pdfjsLib) {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    const params = new URLSearchParams(location.search);
+    const fileParam = params.get('file');
+    const fileUrl = fileParam ? decodeURIComponent(fileParam) : '';
+
+    const canvas = document.getElementById('the-canvas');
+    const ctx = canvas.getContext('2d');
+    const statusEl = document.getElementById('status');
+    const pageNumEl = document.getElementById('page_num');
+    const pageCountEl = document.getElementById('page_count');
+    const downloadEl = document.getElementById('download');
+
+    let pdfDoc = null;
+    let pageNum = 1;
+    let scale = 1.1;
+    let rendering = false;
+    let pendingPage = null;
+
+    function renderPage(num) {
+      rendering = true;
+      pdfDoc.getPage(num).then(function(page) {
+        const viewport = page.getViewport({ scale });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = { canvasContext: ctx, viewport };
+        const renderTask = page.render(renderContext);
+
+        renderTask.promise.then(function() {
+          rendering = false;
+          canvas.style.display = '';
+          statusEl.style.display = 'none';
+          pageNumEl.textContent = num;
+          if (pendingPage !== null) {
+            renderPage(pendingPage);
+            pendingPage = null;
+          }
+        });
+      });
+    }
+
+    function queueRenderPage(num) {
+      if (rendering) pendingPage = num; else renderPage(num);
+    }
+
+    function showError(msg) {
+      statusEl.textContent = msg;
+      statusEl.classList.add('error');
+    }
+
+    // Controls
+    document.getElementById('prev').addEventListener('click', function() {
+      if (pageNum <= 1) return; pageNum--; queueRenderPage(pageNum);
+    });
+    document.getElementById('next').addEventListener('click', function() {
+      if (!pdfDoc || pageNum >= pdfDoc.numPages) return; pageNum++; queueRenderPage(pageNum);
+    });
+    document.getElementById('zoom_in').addEventListener('click', function() {
+      scale = Math.min(3, scale + 0.1); queueRenderPage(pageNum);
+    });
+    document.getElementById('zoom_out').addEventListener('click', function() {
+      scale = Math.max(0.3, scale - 0.1); queueRenderPage(pageNum);
+    });
+
+    // Initialize
+    (async function init() {
+      try {
+        if (!fileUrl) {
+          showError('No PDF file specified.');
+          return;
+        }
+        // Link for direct download
+        downloadEl.href = fileUrl;
+
+        // Small availability check with HEAD and retry a couple of times
+        async function waitForAvailable(url, attempts = 3, delayMs = 300) {
+          for (let i = 0; i < attempts; i++) {
+            try {
+              const resp = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+              if (resp.ok) return true;
+            } catch {}
+            await new Promise(r => setTimeout(r, delayMs));
+          }
+          return true; // proceed anyway; server might not support HEAD in some envs
+        }
+
+        await waitForAvailable(fileUrl);
+
+        const loadingTask = pdfjsLib.getDocument({ 
+          url: fileUrl, 
+          withCredentials: false,
+          disableRange: true,
+          disableStream: true,
+          disableAutoFetch: false
+        });
+        pdfDoc = await loadingTask.promise;
+        pageCountEl.textContent = pdfDoc.numPages;
+        renderPage(pageNum);
+      } catch (err) {
+        console.error('PDF viewer error:', err);
+        showError('Failed to load PDF preview. ' + (fileUrl ? 'URL: ' + fileUrl : ''));
+      }
+    })();
+  </script>
+</body>
+</html>

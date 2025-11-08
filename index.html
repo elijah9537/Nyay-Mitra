@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nyay-mitra: Your Rights in India</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Google Maps JavaScript API is loaded with our key for embedded maps -->
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-xl shadow-sm sticky top-0 z-50 border-b border-slate-200/60">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0">
+                    <a href="#home" class="flex items-center space-x-3 nav-link brand" aria-label="Nyay-mitra Home">
+                        <img src="logo.svg" alt="Nyay-mitra Logo" class="brand-scales w-10 h-10 drop-shadow-md" role="img" aria-hidden="true">
+                        <span class="brand-text text-2xl font-semibold font-heading">Nyay-mitra</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Home</a>
+                        <a href="#rights" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Your Rights</a>
+                        <a href="#crimes" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Common Crimes</a>
+                        <a href="#action" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">What To Do</a>
+                        <a href="#protections" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Protections</a>
+                        <a href="#resources" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Resources &amp; AI Tools</a>
+                        <a href="#learning" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Learning Space</a>
+                        <a href="#help" class="nav-link text-sm font-medium text-slate-600 hover:text-blue-600">Get Help</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-500 hover:text-slate-700 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-lucide="menu" class="h-6 w-6" id="menu-icon-open"></i>
+                        <i data-lucide="x" class="h-6 w-6 hidden" id="menu-icon-close"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden pb-3 space-y-1">
+                <a href="#home" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Home</a>
+                <a href="#rights" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Your Rights</a>
+                <a href="#crimes" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Common Crimes</a>
+                <a href="#action" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">What To Do</a>
+                <a href="#protections" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Protections</a>
+                <a href="#resources" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Resources &amp; AI Tools</a>
+                <a href="#learning" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Learning Space</a>
+                <a href="#help" class="nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-600 hover:text-blue-600 hover:bg-slate-100">Get Help</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto p-4 sm:p-6 lg:p-8 overflow-x-hidden">
+
+        <section id="home" class="content-section">
+          <div class="text-center pt-12 pb-16 px-6">
+              <img src="logo.svg" alt="Nyay-mitra Logo" class="w-28 h-auto mx-auto mb-6 animate-on-scroll float-slow drop-shadow-lg">
+                <h1 class="text-4xl font-bold text-slate-900 sm:text-5xl md:text-6xl font-heading leading-tight animate-on-scroll" style="--delay: 100ms;">Empowering You with Legal Knowledge</h1>
+                <p class="mt-6 text-lg text-slate-600 max-w-3xl mx-auto animate-on-scroll" style="--delay: 200ms;">Your trusted friend in understanding the law. Start your journey to becoming an informed and aware citizen.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <a href="#rights" class="home-card nav-link bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center border-t-4 border-transparent hover:border-accent animate-on-scroll" style="--delay: 300ms;">
+                    <i data-lucide="shield-check" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="font-heading text-xl font-bold mb-2">Know Your Rights</h3>
+                    <p>Understand the fundamental rights guaranteed to you as a citizen of India.</p>
+                </a>
+                <a href="#crimes" class="home-card nav-link bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center border-t-4 border-transparent hover:border-accent animate-on-scroll" style="--delay: 400ms;">
+                    <i data-lucide="gavel" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="font-heading text-xl font-bold mb-2">Understand Crimes</h3>
+                    <p>Learn about common offences and the recent changes in Indian penal laws.</p>
+                </a>
+                <a href="#action" class="home-card nav-link bg-white p-8 rounded-lg shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col items-center text-center border-t-4 border-transparent hover:border-accent animate-on-scroll" style="--delay: 500ms;">
+                    <i data-lucide="file-check" class="h-12 w-12 text-accent mb-4"></i>
+                    <h3 class="font-heading text-xl font-bold mb-2">Learn What To Do</h3>
+                    <p>Get clear, step-by-step guidance on the procedures to follow after a crime occurs.</p>
+                </a>
+            </div>
+        </section>
+
+        <section id="rights" class="content-section">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">Know Your Rights as a Victim</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Understanding which of your constitutional rights has been impacted is the first step to seeking justice.</p>
+            </div>
+            <div id="rights-accordion" class="space-y-4 max-w-4xl mx-auto"></div>
+        </section>
+
+        <section id="crimes" class="content-section">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">Understanding Common Crimes: IPC vs. BNS</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Explore key offences under the new Bharatiya Nyaya Sanhita (BNS) and see how they compare to the old Indian Penal Code (IPC).</p>
+            </div>
+             <div class="flex justify-center mb-8 animate-on-scroll" style="--delay: 100ms;">
+                <div class="w-full max-w-xs">
+                    <label for="crime-category-filter" class="block text-sm font-medium text-slate-700 mb-1">Filter by Crime Category:</label>
+                    <select id="crime-category-filter" class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-slate-300 focus:outline-none focus:ring-accent focus:border-accent sm:text-sm rounded-md shadow-sm">
+                        <option value="all">All Categories</option>
+                        <option value="property">Offences Against Property</option>
+                        <option value="body">Offences Against the Body</option>
+                        <option value="state">Offences Against the State</option>
+                        <option value="new">New Categories of Crime</option>
+                        <option value="sexual">Sexual Offences</option>
+                        <option value="other">Other Offences</option>
+                    </select>
+                </div>
+            </div>
+            <div class="mb-12 animate-on-scroll" style="--delay: 200ms;">
+                 <div class="chart-container bg-white p-6 rounded-lg shadow-md border border-slate-200">
+                    <canvas id="punishmentChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-slate-500 mt-2">Maximum imprisonment (in years) for select offences with changed punishments under the BNS.</p>
+            </div>
+            <div id="crimes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+        </section>
+
+        <section id="action" class="content-section">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">What to Do When a Crime Occurs</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Facing a crime can be overwhelming. This guide walks you through the essential steps, explains your rights, and demystifies key legal documents.</p>
+            </div>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center font-heading animate-on-scroll">The General Path to Justice</h3>
+                    <div id="action-flowchart" class="space-y-4"></div>
+                     <div class="mt-8 text-center bg-blue-50 border border-blue-200 rounded-lg p-6 max-w-2xl mx-auto animate-on-scroll">
+                        <p class="text-slate-700">Finished learning the steps? Now, get help drafting your document.</p>
+                        <a href="#resources" class="action-link nav-link inline-block mt-3 bg-accent hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-md transition duration-300 glow-on-hover">
+                            Try the AI Document Drafter
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center font-heading animate-on-scroll">Scenario-Specific Guides</h3>
+                    <div id="scenario-guides-accordion" class="space-y-4 max-w-4xl mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+                    <div id="victim-checklist-container" class="animate-on-scroll" style="--delay: 100ms;"></div>
+                    <div id="arrested-checklist-container" class="animate-on-scroll" style="--delay: 200ms;"></div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-8 text-center font-heading animate-on-scroll">Key Documents Explained</h3>
+                    <div id="documents-accordion" class="space-y-4 max-w-4xl mx-auto"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="protections" class="content-section">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">Special Protections for a Fairer Society</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Indian law provides specific safeguards for vulnerable groups. Explore the protections available for women, children, consumers, and users of the digital world.</p>
+            </div>
+            <div class="max-w-4xl mx-auto animate-on-scroll" style="--delay: 100ms;">
+                <div class="mb-4 border-b border-slate-200">
+                    <nav id="protections-tabs" class="-mb-px flex space-x-6 overflow-x-auto" aria-label="Tabs">
+                    </nav>
+                </div>
+                <div id="protections-content">
+                </div>
+            </div>
+        </section>
+
+        <section id="resources" class="content-section">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">Legal Resources &amp; AI Tools</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Empower yourself with practical tools and deeper knowledge. Here you'll find document templates to help you get started, AI-powered assistance tailored for legal needs, and simple summaries of landmark cases that have shaped our rights.</p>
+            </div>
+            <div class="max-w-4xl mx-auto animate-on-scroll" style="--delay: 100ms;">
+                 <div class="mb-4 border-b border-slate-200">
+                    <nav id="resources-tabs" class="-mb-px flex space-x-6" aria-label="Tabs">
+                        <button class="resource-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-target="templates">Document Templates</button>
+                        <button class="resource-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-target="cases">Landmark Cases</button>
+                        <button class="resource-tab whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm" data-target="ai-tools">AI Tools</button>
+                    </nav>
+                </div>
+                <div id="resources-content"></div>
+            </div>
+        </section>
+
+        <section id="help" class="content-section">
+            <div class="text-center mb-16 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">Avenues for Aid & Accountability</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Beyond reporting crimes, every citizen has powerful tools to demand transparency, hold public servants accountable, and access justice. Learn how to use them through these official channels.</p>
+            </div>
+            <div id="help-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            <div class="mt-8 flex justify-center">
+                <div class="bg-white rounded-lg shadow-md p-6 border border-slate-200 flex flex-col text-center items-center w-full max-w-2xl" id="find-police-card">
+                    <div class="bg-blue-100 text-accent rounded-full p-3 mb-4"><i data-lucide="map-pin" class="w-8 h-8"></i></div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Nearby Police Station</h3>
+                    <p class="text-slate-600 mb-4">Find the nearest police station using your location.</p>
+                    <button id="find-police-btn" class="action-link inline-block bg-accent text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">Find Near Me</button>
+                    <div id="police-result" class="police-result mt-3"></div>
+                    <div id="map-container" class="map-container mt-4 w-full hidden">
+                        <div id="police-map" class="police-map"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="helpline-directory" class="mt-16 animate-on-scroll"></div>
+        </section>
+
+        <!-- Learning Space -->
+        <section id="learning" class="content-section">
+            <div class="text-center mb-12 animate-on-scroll">
+                <h2 class="text-3xl font-bold text-slate-900 sm:text-4xl font-heading">Learning Space</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">Master Indian law through interactive, scenario-based quizzes. Earn badges and a certificate as you progress.</p>
+            </div>
+
+            <div id="progress-dashboard" class="mb-10"></div>
+
+            <div id="module-selection" class="space-y-4"></div>
+
+            <div id="quiz-screen" class="hidden">
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 p-6">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h3 id="quiz-title" class="text-xl font-bold text-slate-900"></h3>
+                            <p id="quiz-subtitle" class="text-sm text-slate-500"></p>
+                        </div>
+                        <div class="w-48">
+                            <div class="progress"><div class="progress-bar" id="quiz-progress"></div></div>
+                        </div>
+                    </div>
+                    <div class="mt-6" id="question-container"></div>
+                    <div class="mt-4 flex justify-between items-center">
+                        <button id="quit-quiz" class="btn-secondary">Quit</button>
+                        <button id="next-question" class="btn-primary hidden">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="results-screen" class="hidden">
+                <div class="bg-white rounded-lg shadow-md border border-slate-200 p-6 text-center">
+                    <h3 class="text-2xl font-bold text-slate-900">Results</h3>
+                    <p id="final-score" class="text-lg text-slate-700 mt-2"></p>
+                    <div id="badges-earned" class="mt-4"></div>
+                    <div class="mt-6 flex flex-wrap justify-center gap-3">
+                        <button id="retry-level" class="btn-secondary">Retry Level</button>
+                        <button id="next-level" class="btn-primary">Next Level</button>
+                        <button id="back-to-modules" class="btn-secondary">Back to Modules</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-100 border-t border-slate-200 mt-12">
+        <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-slate-500">
+            <p class="text-sm"><strong>Disclaimer:</strong> The content on this website is for informational purposes only and does not constitute legal advice. Please consult with a qualified legal professional for advice on any specific legal issue or matter.</p>
+        </div>
+    </footer>
+
+    <div id="chat-widget-container" class="fixed bottom-0 right-0 md:bottom-8 md:right-8 z-[1000]">
+        <div id="chat-bubble" class="w-16 h-16 rounded-full flex items-center justify-center cursor-pointer shadow-lg hover:scale-110 transition-transform duration-200">
+            <i data-lucide="message-circle" class="h-8 w-8 text-white"></i>
+        </div>
+
+        <div id="chat-window" class="hidden fixed bottom-0 right-0 w-full h-full md:w-[400px] md:h-[600px] md:max-h-[80vh] md:bottom-28 md:right-8 bg-white rounded-t-lg md:rounded-lg shadow-2xl flex flex-col transition-transform duration-300 transform md:scale-95 md:opacity-0">
+            <div class="flex items-center justify-between p-4 bg-slate-100 border-b border-slate-200 rounded-t-lg">
+                <div class="flex items-center space-x-2">
+                    <img src="logo.svg" alt="Nyay-mitra Logo" class="h-7 w-7 drop-shadow-sm" role="img" aria-hidden="true">
+                    <h3 class="font-heading text-lg font-bold">NyayAI Assistant</h3>
+                </div>
+                <button id="close-chat-btn" class="text-slate-500 hover:text-slate-800" title="Close Chat">
+                    <i data-lucide="x" class="h-6 w-6"></i>
+                </button>
+            </div>
+
+            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto">
+                </div>
+
+            <div class="p-4 bg-white border-t border-slate-200">
+                <div id="chat-file-preview-container" class="hidden items-center space-x-2 mb-2 p-2 bg-slate-100 rounded-md">
+                    <i data-lucide="file" class="h-5 w-5 text-slate-500"></i>
+                    <span id="chat-file-preview-name" class="text-sm text-slate-700 truncate"></span>
+                    <button id="chat-remove-file-btn" class="text-slate-500 hover:text-red-600 ml-auto" aria-label="Remove attached file" title="Remove attached file">
+                        <i data-lucide="x-circle" class="h-4 w-4"></i>
+                    </button>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <input type="text" id="chat-input" class="flex-1 w-full border-slate-300 rounded-md shadow-sm focus:ring-accent focus:border-accent" placeholder="Ask about Indian law...">
+                    <label for="chat-file-upload" class="sr-only">Attach a document</label>
+                    <input type="file" id="chat-file-upload" class="hidden" accept=".pdf,.txt" title="Attach a document">
+                    <button id="chat-attach-btn" class="p-2 text-slate-500 hover:text-accent rounded-full hover:bg-blue-100" aria-label="Attach Document" title="Attach Document">
+                        <i data-lucide="paperclip" class="h-5 w-5"></i>
+                    </button>
+                    <button id="chat-send-btn" class="p-2 bg-accent text-white rounded-full hover:bg-blue-700 disabled:bg-slate-300" aria-label="Send message" title="Send message">
+                        <i data-lucide="send" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="quiz_data.js"></script>
+    <script src="app.js" defer></script>
+</body>
+</html>

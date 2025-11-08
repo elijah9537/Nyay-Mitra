@@ -1,0 +1,650 @@
+// Quiz data for Nyay-Mitra
+const quizData = {
+  // Quiz modules with real-life scenarios, references, and more topics
+  modules: [
+    {
+      id: "basic-rights",
+      name: "Basic Rights",
+      description: "Test your knowledge of fundamental rights and duties.",
+      levels: [
+        {
+          id: "level-1",
+          name: "Level 1",
+          questions: [
+            {
+              q: "Which article of the Indian Constitution guarantees the Right to Equality?",
+              options: ["Article 14", "Article 19", "Article 21", "Article 32"],
+              answer: 0,
+              reference: "Article 14, Constitution of India",
+              scenario: "Ravi is denied entry to a public park because of his religion. Which right protects him?"
+            },
+            {
+              q: "What is the minimum age for voting in India?",
+              options: ["16", "18", "21", "25"],
+              answer: 1,
+              reference: "Article 326, Constitution of India",
+              scenario: "Priya just turned 18 and wants to participate in the next general election. Is she eligible to vote?"
+            },
+            {
+              q: "Which of these is a Fundamental Duty?",
+              options: ["To vote in elections", "To pay taxes", "To protect public property", "To own property"],
+              answer: 2,
+              reference: "Article 51A, Constitution of India",
+              scenario: "A group of students damages a government bus during a protest. Which duty have they violated?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: "fir-procedure",
+      name: "FIR & Police",
+      description: "Learn about filing FIRs and police procedures.",
+      levels: [
+        {
+          id: "level-1",
+          name: "Level 1",
+          questions: [
+            {
+              q: "What does FIR stand for?",
+              options: ["First Information Report", "Final Investigation Report", "First Investigation Record", "Formal Incident Report"],
+              answer: 0,
+              reference: "Section 154, CrPC",
+              scenario: "Sunita's phone is stolen. She goes to the police station to report it. What document will the police file first?"
+            },
+            {
+              q: "Can you file an FIR online in India?",
+              options: ["Yes, in most states", "No, only in person", "Only for theft", "Only for women"],
+              answer: 0,
+              reference: "State Police Websites",
+              scenario: "Amit's bike is stolen. He visits his state police website to report the theft. Is this possible?"
+            },
+            {
+              q: "What should you do if the police refuse to file your FIR?",
+              options: ["Go home", "Bribe the officer", "Approach a senior officer or magistrate", "Wait for a week"],
+              answer: 2,
+              reference: "Section 154(3), CrPC",
+              scenario: "Meena tries to file an FIR, but the officer refuses. What is her next step?"
+            }
+          ]
+        }
+      ]
+    },
+    // New module: Women's Rights
+    {
+      id: "womens-rights",
+      name: "Women's Rights",
+      description: "Know your rights and protections as a woman in India.",
+      levels: [
+        {
+          id: "level-1",
+          name: "Level 1",
+          questions: [
+            {
+              q: "Which law protects women from domestic violence in India?",
+              options: ["The Dowry Prohibition Act", "The Protection of Women from Domestic Violence Act", "The Sexual Harassment of Women at Workplace Act", "The Indian Penal Code"],
+              answer: 1,
+              reference: "Protection of Women from Domestic Violence Act, 2005",
+              scenario: "Shalini faces abuse at home. Which law can she use to seek protection?"
+            },
+            {
+              q: "What is the helpline number for women in distress in India?",
+              options: ["100", "1091", "181", "112"],
+              answer: 1,
+              reference: "National Commission for Women",
+              scenario: "Priya is in danger and needs immediate help. Which number should she call?"
+            }
+          ]
+        }
+      ]
+    },
+    // New module: Consumer Protection
+    {
+      id: "consumer-protection",
+      name: "Consumer Protection",
+      description: "Learn about your rights as a consumer.",
+      levels: [
+        {
+          id: "level-1",
+          name: "Level 1",
+          questions: [
+            {
+              q: "Which act protects consumers in India?",
+              options: ["Consumer Protection Act", "Right to Information Act", "Indian Contract Act", "Shops and Establishments Act"],
+              answer: 0,
+              reference: "Consumer Protection Act, 2019",
+              scenario: "Ramesh buys a defective product and wants to file a complaint. Which law helps him?"
+            },
+            {
+              q: "Where can a consumer file a complaint for goods worth less than Rs. 1 crore?",
+              options: ["District Commission", "State Commission", "National Commission", "Supreme Court"],
+              answer: 0,
+              reference: "Consumer Protection Act, 2019",
+              scenario: "Sita's washing machine is faulty. The value is Rs. 50,000. Where should she file her complaint?"
+            }
+          ]
+        }
+      ]
+    },
+    // New module: Cyber Law
+    {
+      id: "cyber-law",
+      name: "Cyber Law",
+      description: "Test your knowledge of cyber crimes and IT law.",
+      levels: [
+        {
+          id: "level-1",
+          name: "Level 1",
+          questions: [
+            {
+              q: "Which act deals with cyber crimes in India?",
+              options: ["IT Act, 2000", "IPC Section 420", "Copyright Act", "Evidence Act"],
+              answer: 0,
+              reference: "Information Technology Act, 2000",
+              scenario: "A hacker steals data from a company. Which law applies?"
+            },
+            {
+              q: "What should you do if you receive a phishing email?",
+              options: ["Click the link", "Ignore and delete it", "Forward to friends", "Reply with your details"],
+              answer: 1,
+              reference: "CERT-In Advisory",
+              scenario: "Rohit gets an email asking for his bank password. What should he do?"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  // Badges/Achievements structure
+  quizBadges: [
+    {
+      id: "streak-3",
+      name: "3 Correct Streak",
+      description: "Answer 3 questions correctly in a row."
+    },
+    {
+      id: "perfect-score",
+      name: "Perfect Score",
+      description: "Get all questions right in a level."
+    },
+    {
+      id: "module-master",
+      name: "Module Master",
+      description: "Complete all levels in a module."
+    },
+    {
+      id: "first-quiz",
+      name: "First Quiz!",
+      description: "Complete your first quiz level."
+    }
+  ]
+}
+              ],
+              correctIndex: 3,
+              explanation: 'Rule of Law is a cornerstone of Indian democracy, ensuring that the law applies equally to all citizens, including government officials.'
+            }
+          ]
+        },
+        {
+          id: 'level-2',
+          title: 'Level 2: Fundamental Rights in Action',
+          description: 'Apply rights to practical scenarios and understand violations.',
+          questions: [
+            {
+              question: 'Priya is denied a job at a government office solely because of her religion. Which of her Fundamental Rights is being violated?',
+              options: [
+                'Right to Freedom of Speech',
+                'Right to Equality',
+                'Right to Life',
+                'Right against Exploitation'
+              ],
+              correctIndex: 1,
+              explanation: 'The Right to Equality (Article 16) prohibits discrimination in matters of public employment on grounds of religion, race, caste, sex, etc.'
+            },
+            {
+              question: 'A newspaper is forcefully stopped from publishing an investigative article that is critical of a government policy. This action infringes upon which right?',
+              options: [
+                'Right to Freedom of Religion',
+                'Right to Freedom of Speech and Expression',
+                'Right to form Associations',
+                'Right to Privacy'
+              ],
+              correctIndex: 1,
+              explanation: 'Freedom of the press is included under the Right to Freedom of Speech and Expression (Article 19), allowing for criticism and debate.'
+            },
+            {
+              question: 'Mohan, aged 12, is rescued from a hazardous firecracker factory where he was forced to work. This is a direct violation of which Fundamental Right?',
+              options: [
+                'Right to Education',
+                'Cultural and Educational Rights',
+                'Right against Exploitation',
+                'Right to Equality'
+              ],
+              correctIndex: 2,
+              explanation: 'The Right against Exploitation (Article 24) prohibits the employment of children below the age of 14 in factories, mines, or other hazardous jobs.'
+            },
+            {
+              question: 'If a citizen feels their Fundamental Right has been violated by the state, which court can they directly approach for its enforcement?',
+              options: [
+                'Only the District Court',
+                'Only a Tribunal',
+                'The Supreme Court or a High Court',
+                'The International Court of Justice'
+              ],
+              correctIndex: 2,
+              explanation: 'The Right to Constitutional Remedies (Article 32 & 226) empowers citizens to move the Supreme Court or a High Court directly to enforce their Fundamental Rights.'
+            },
+            {
+              question: 'The government begins tapping a journalist\'s phone without any legal authority, listening to all her private conversations. This action is a major violation of her...',
+              options: [
+                'Right to practice any profession',
+                'Right to form associations',
+                'Right to Privacy',
+                'Right to freedom of assembly'
+              ],
+              correctIndex: 2,
+              explanation: 'The Supreme Court has declared the Right to Privacy as a Fundamental Right, intrinsic to the Right to Life and Personal Liberty (Article 21).'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'justice-system',
+      title: 'Navigating the Justice System',
+      description: 'Learn how to report crimes and understand police procedures.',
+      badge: 'Silver Navigator',
+      levels: [
+        {
+          id: 'level-1',
+          title: 'Level 1: Reporting a Crime',
+          description: 'Master the basics of filing FIRs and interacting with police.',
+          questions: [
+            {
+              question: 'What is the full form of F.I.R. in the context of Indian criminal law?',
+              options: [
+                'Final Investigation Report',
+                'First Information Report',
+                'Fast Inquiry Record',
+                'Further Incident Report'
+              ],
+              correctIndex: 1,
+              explanation: 'An F.I.R. is the first document prepared by the police when they receive information about the commission of a cognizable offense.'
+            },
+            {
+              question: 'Is it mandatory for the police to provide a free copy of the F.I.R. to the person who reported the crime?',
+              options: [
+                'No, it is optional.',
+                'Yes, but they have to pay a fee.',
+                'Yes, it is their legal right to get a copy free of cost.',
+                'Only if a court orders it.'
+              ],
+              correctIndex: 2,
+              explanation: 'The law mandates that the informant (person filing the F.I.R.) must be given a copy immediately and free of cost.'
+            },
+            {
+              question: 'What is a "Zero F.I.R."?',
+              options: [
+                'An F.I.R. that has no value in court.',
+                'An F.I.R. filed for a crime that never happened.',
+                'An F.I.R. that can be filed in any police station, regardless of where the crime occurred.',
+                'An F.I.R. filed online.'
+              ],
+              correctIndex: 2,
+              explanation: 'A Zero F.I.R. allows a victim to report a crime at any police station, which then transfers it to the appropriate station, saving crucial time.'
+            },
+            {
+              question: 'If a police officer at a station refuses to register an F.I.R. for a cognizable offense, what is the next step a person can take?',
+              options: [
+                'Forget about the incident.',
+                'Send the complaint in writing to the Superintendent of Police (SP).',
+                'File a complaint with the municipal corporation.',
+                'Publish the complaint in a newspaper.'
+              ],
+              correctIndex: 1,
+              explanation: 'If the local police refuse to file an F.I.R., the victim can approach a senior officer like the SP or a Magistrate.'
+            },
+            {
+              question: 'A person who does not know how to write wants to file an F.I.R. What is the correct procedure?',
+              options: [
+                'They cannot file an F.I.R.',
+                'They must hire a lawyer to write it for them.',
+                'They can orally state the facts and the police officer must write it down.',
+                'They must learn to write before they can file an F.I.R.'
+              ],
+              correctIndex: 2,
+              explanation: 'The law requires the police officer to write down the information given orally, and then read it back to the informant to ensure accuracy.'
+            }
+          ]
+        },
+        {
+          id: 'level-2',
+          title: 'Level 2: Police & Arrest Procedures',
+          description: 'Understand your rights during arrest and police interaction.',
+          questions: [
+            {
+              question: 'The police arrive at Ajay\'s house to arrest him. They are in plain clothes and refuse to show their identity cards when asked. Is this procedure correct?',
+              options: [
+                'Yes, police can work undercover.',
+                'Yes, if they are from a special unit.',
+                'No, a police officer must clearly display their name and designation during an arrest.',
+                'No, but only if Ajay is a government employee.'
+              ],
+              correctIndex: 2,
+              explanation: 'It is mandatory for a police officer making an arrest to wear a clear, visible, and accurate identification.'
+            },
+            {
+              question: 'A woman is to be arrested for a non-serious crime at 10 PM. What is the general rule the police must follow?',
+              options: [
+                'They can arrest her immediately.',
+                'They can only arrest her if a male family member is present.',
+                'A woman cannot be arrested after sunset and before sunrise, except in exceptional cases with a magistrate\'s prior permission.',
+                'They must wait for exactly one hour after sunset.'
+              ],
+              correctIndex: 2,
+              explanation: 'This rule is in place to protect the dignity and safety of women, ensuring arrests are not made at odd hours without judicial oversight.'
+            },
+            {
+              question: 'After being arrested without a warrant, within how much time must a person be presented before a magistrate?',
+              options: [
+                'Within 48 hours',
+                'Within one week',
+                'Within 24 hours',
+                'As soon as the police investigation is complete'
+              ],
+              correctIndex: 2,
+              explanation: 'Article 22 of the Constitution mandates that an arrested person must be produced before the nearest magistrate within 24 hours of arrest, excluding travel time.'
+            },
+            {
+              question: 'A police officer needs to conduct a physical search of a female suspect. Who must conduct this search?',
+              options: [
+                'Any available police officer',
+                'The senior-most male officer',
+                'Only another woman, with strict regard to decency',
+                'A doctor'
+              ],
+              correctIndex: 2,
+              explanation: 'The law is very clear that the search of a female can only be made by another female, ensuring her dignity is protected.'
+            },
+            {
+              question: 'Ritu is a witness to a crime. Can the police arrest her and put her in lock-up simply for refusing to answer their questions?',
+              options: [
+                'Yes, witnesses must answer all questions or face arrest.',
+                'Yes, but only for 12 hours.',
+                'No, a witness cannot be arrested or detained for refusing to answer questions.',
+                'No, but they can be fined on the spot.'
+              ],
+              correctIndex: 2,
+              explanation: 'Police can question a witness, but they do not have the power to arrest or confine them for not cooperating. Witnesses are not the accused.'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'common-offenses',
+      title: 'Common Offenses (IPC vs. BNS)',
+      description: 'Understand crimes against property and body under old and new laws.',
+      badge: 'Gold Expert',
+      levels: [
+        {
+          id: 'level-1',
+          title: 'Level 1: Offenses Against Property & Body',
+          description: 'Learn about theft, robbery, assault and related crimes.',
+          questions: [
+            {
+              question: 'Taking a mobile phone from someone\'s bag without their permission and with the intention of keeping it is known as...',
+              options: [
+                'Robbery',
+                'Extortion',
+                'Theft',
+                'Mischief'
+              ],
+              correctIndex: 2,
+              explanation: 'Theft, as defined under Section 378 of the IPC and Section 303 of the BNS, is dishonestly taking movable property without consent.'
+            },
+            {
+              question: 'If a person snatches a gold chain from someone\'s neck by using force, the offense becomes...',
+              options: [
+                'Theft',
+                'Robbery',
+                'Criminal Misappropriation',
+                'Cheating'
+              ],
+              correctIndex: 1,
+              explanation: 'Robbery (Section 390 IPC / Section 308 BNS) is an aggravated form of theft where the offender uses or threatens violence.'
+            },
+            {
+              question: 'Intentionally causing physical pain to any person is defined under the Indian Penal Code as...',
+              options: [
+                'Assault',
+                'Battery',
+                'Hurt',
+                'Affray'
+              ],
+              correctIndex: 2,
+              explanation: '\'Hurt\' (Section 319 IPC / Section 112 BNS) is the legal term for causing bodily pain, disease, or infirmity to another person.'
+            },
+            {
+              question: 'The new law proposed to replace the Indian Penal Code (IPC), 1860 is the...',
+              options: [
+                'Indian Criminal Code, 2023',
+                'Bharatiya Nyaya Sanhita (BNS), 2023',
+                'National Security Act, 2023',
+                'Civil Procedure Code, 2023'
+              ],
+              correctIndex: 1,
+              explanation: 'The Bharatiya Nyaya Sanhita, 2023, aims to modernize and replace the colonial-era Indian Penal Code.'
+            },
+            {
+              question: 'An employee is given company funds to deposit in the bank but instead uses the money for personal expenses. This is called...',
+              options: [
+                'Theft',
+                'Cheating',
+                'Criminal breach of trust',
+                'Robbery'
+              ],
+              correctIndex: 2,
+              explanation: 'Criminal breach of trust (Section 405 IPC / Section 314 BNS) occurs when someone entrusted with property dishonestly misappropriates it.'
+            }
+          ]
+        },
+        {
+          id: 'level-2',
+          title: 'Level 2: Advanced Criminal Concepts',
+          description: 'Explore complex criminal scenarios and new BNS provisions.',
+          questions: [
+            {
+              question: 'Under the new Bharatiya Nyaya Sanhita, what is a significant change for mob lynching cases?',
+              options: [
+                'Mob lynching is not covered under BNS',
+                'It\'s now a specific offense with severe penalties for groups of 5 or more',
+                'Only applies to religious minorities',
+                'Punishment is reduced compared to IPC'
+              ],
+              correctIndex: 1,
+              explanation: 'BNS Section 103(2) specifically criminalizes mob lynching by groups of 5 or more people on grounds of race, caste, community, etc., with severe penalties.'
+            },
+            {
+              question: 'A driver causes a fatal accident due to negligence and flees the scene without reporting. Under BNS, this is called...',
+              options: [
+                'Simple negligence',
+                'Hit-and-run offense',
+                'Rash driving',
+                'Attempt to murder'
+              ],
+              correctIndex: 1,
+              explanation: 'BNS Section 106(2) creates a new specific offense of hit-and-run, with punishment up to 10 years for causing death by negligence and fleeing.'
+            },
+            {
+              question: 'What is the key difference between "hurt" and "grievous hurt"?',
+              options: [
+                'Hurt is accidental, grievous hurt is intentional',
+                'Grievous hurt involves specific severe injuries like fractures or permanent damage',
+                'Hurt is for adults, grievous hurt is for children',
+                'There is no legal difference'
+              ],
+              correctIndex: 1,
+              explanation: 'Grievous hurt (Section 320 IPC / Section 113 BNS) includes specific severe injuries like fractures, permanent disfigurement, or loss of limb function.'
+            },
+            {
+              question: 'Under the new criminal laws, what happens to the offense of sedition?',
+              options: [
+                'It remains exactly the same',
+                'It is completely abolished',
+                'It is replaced with "Acts Endangering Sovereignty, Unity and Integrity of India"',
+                'It only applies to foreigners now'
+              ],
+              correctIndex: 2,
+              explanation: 'The controversial sedition law (IPC 124A) has been replaced with a broader offense under BNS Section 152 focusing on acts against national integrity.'
+            },
+            {
+              question: 'A person deceives someone into sexual intercourse by promising marriage but has no intention to marry. Under BNS, this is...',
+              options: [
+                'Not a criminal offense',
+                'Simple cheating',
+                'Sexual intercourse by deceit',
+                'Breach of promise'
+              ],
+              correctIndex: 2,
+              explanation: 'BNS Section 69 introduces a new offense of sexual intercourse by deceitful means or false promise to marry, punishable with up to 10 years imprisonment.'
+            }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'landmark-cases',
+      title: 'Landmark Judgments & Advanced Concepts',
+      description: 'Master the foundational court decisions that shaped Indian law.',
+      badge: 'Platinum Master',
+      levels: [
+        {
+          id: 'level-1',
+          title: 'Level 1: Foundational Case Law',
+          description: 'Study the most important Supreme Court judgments.',
+          questions: [
+            {
+              question: 'Which landmark case established the "Basic Structure Doctrine", stating that Parliament cannot alter the fundamental framework of the Constitution?',
+              options: [
+                'Maneka Gandhi v. Union of India',
+                'Kesavananda Bharati v. State of Kerala',
+                'Indra Sawhney v. Union of India',
+                'A.K. Gopalan v. State of Madras'
+              ],
+              correctIndex: 1,
+              explanation: 'The Kesavananda Bharati case is monumental for establishing that while Parliament can amend the Constitution, it cannot destroy its basic features like democracy, secularism, and federalism.'
+            },
+            {
+              question: 'In which case did the Supreme Court declare the Right to Privacy to be a Fundamental Right intrinsic to the Right to Life and Personal Liberty?',
+              options: [
+                'Navtej Singh Johar v. Union of India',
+                'Vishaka v. State of Rajasthan',
+                'Justice K.S. Puttaswamy (Retd.) v. Union of India',
+                'M.C. Mehta v. Union of India'
+              ],
+              correctIndex: 2,
+              explanation: 'The Puttaswamy judgment is a cornerstone of digital rights and personal liberty, unanimously affirming the Right to Privacy under Article 21.'
+            },
+            {
+              question: 'Section 66A of the Information Technology Act, which was criticized for curbing online free speech, was struck down by the Supreme Court in which case?',
+              options: [
+                'Shreya Singhal v. Union of India',
+                'PUCL v. Union of India',
+                'Bennett Coleman & Co. v. Union of India',
+                'Romesh Thappar v. State of Madras'
+              ],
+              correctIndex: 0,
+              explanation: 'The court found Section 66A to be unconstitutionally vague and a disproportionate restriction on the freedom of speech and expression.'
+            },
+            {
+              question: 'In which case did the Supreme Court decriminalize consensual homosexual acts between adults by partially striking down Section 377 of the IPC?',
+              options: [
+                'Suresh Kumar Koushal v. Naz Foundation',
+                'National Legal Services Authority v. Union of India',
+                'Joseph Shine v. Union of India',
+                'Navtej Singh Johar v. Union of India'
+              ],
+              correctIndex: 3,
+              explanation: 'The court held that Section 377 was unconstitutional insofar as it criminalized consensual private conduct between adults, affirming rights to equality and dignity.'
+            },
+            {
+              question: 'The case of Indra Sawhney v. Union of India is primarily associated with which major legal issue?',
+              options: [
+                'Electoral reforms',
+                'Reservations for OBCs in employment',
+                'Right to education',
+                'Environmental protection'
+              ],
+              correctIndex: 1,
+              explanation: 'Also known as the Mandal Commission case, this judgment upheld reservations for Other Backward Classes (OBCs) while setting a 50% ceiling on total reservations.'
+            }
+          ]
+        },
+        {
+          id: 'level-2',
+          title: 'Level 2: Constitutional Evolution',
+          description: 'Advanced constitutional interpretation and modern challenges.',
+          questions: [
+            {
+              question: 'Which case first introduced the concept that Article 21 (Right to Life) includes the right to live with dignity and goes beyond mere physical existence?',
+              options: [
+                'Kesavananda Bharati v. State of Kerala',
+                'Maneka Gandhi v. Union of India',
+                'Olga Tellis v. Bombay Municipal Corporation',
+                'Francis Coralie Mullin v. Administrator, Delhi'
+              ],
+              correctIndex: 3,
+              explanation: 'Francis Coralie Mullin case expanded the scope of Article 21 to include dignity, laying the foundation for numerous subsequent rights interpretations.'
+            },
+            {
+              question: 'The doctrine of "Prospective Overruling" in Indian jurisprudence was established in which landmark case?',
+              options: [
+                'Golaknath v. State of Punjab',
+                'I.C. Golaknath v. State of Punjab',
+                'Sajjan Singh v. State of Rajasthan',
+                'Shankari Prasad v. Union of India'
+              ],
+              correctIndex: 0,
+              explanation: 'The Golaknath case established that constitutional amendments could not take away fundamental rights, and introduced prospective overruling to avoid legal chaos.'
+            },
+            {
+              question: 'Which case established that the Right to Education is a fundamental right under Article 21?',
+              options: [
+                'Mohini Jain v. State of Karnataka',
+                'Unni Krishnan v. State of A.P.',
+                'T.M.A. Pai Foundation v. State of Karnataka',
+                'Society for Un-aided Private Schools v. Union of India'
+              ],
+              correctIndex: 1,
+              explanation: 'Unni Krishnan case definitively established education as a fundamental right, later codified through the 86th Constitutional Amendment and RTE Act.'
+            },
+            {
+              question: 'The concept of "Compensatory Jurisprudence" for human rights violations was pioneered in which case?',
+              options: [
+                'Rudul Sah v. State of Bihar',
+                'Nilabati Behera v. State of Orissa',
+                'D.K. Basu v. State of West Bengal',
+                'Sebastin Hongray v. Union of India'
+              ],
+              correctIndex: 1,
+              explanation: 'Nilabati Behera case established the principle of monetary compensation for custodial death, even without specific statutory provision.'
+            },
+            {
+              question: 'Which recent judgment recognized "Dying with Dignity" as part of Article 21?',
+              options: [
+                'Gian Kaur v. State of Punjab',
+                'Common Cause v. Union of India (Passive Euthanasia)',
+                'Aruna Shanbaug v. Union of India',
+                'Justice K.S. Puttaswamy v. Union of India'
+              ],
+              correctIndex: 1,
+              explanation: 'Common Cause case (2018) recognized passive euthanasia and living wills, affirming that dying with dignity is part of the right to life.'
+            }
+          ]
+        }
+      ]
+    }
+  ]
+};
