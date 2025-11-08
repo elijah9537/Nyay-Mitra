@@ -1,11 +1,18 @@
-# Nyay-mitra (न्याय-मित्र) 🏛️⚖️
-
-**Your Legal Companion - Making Indian Law Accessible to Everyone**
-
-[![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
-[![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
-[![AI Powered](https://img.shields.io/badge/AI-Powered-blueviolet?style=for-the-badge)](https://groq.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+<div align="center">
+  <img src="logo.svg" alt="Nyay-mitra Logo" width="200" height="200">
+  
+  # Nyay-mitra (न्याय-मित्र)
+  ### 🏛️ Your Legal Companion - Making Indian Law Accessible to Everyone ⚖️
+  
+  [![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org/)
+  [![Express.js](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
+  [![AI Powered](https://img.shields.io/badge/AI-Powered-blueviolet?style=for-the-badge)](https://groq.com/)
+  [![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+  
+  [![GitHub Stars](https://img.shields.io/github/stars/elijah9537/Nyay-Mitra?style=social)](https://github.com/elijah9537/Nyay-Mitra)
+  [![GitHub Forks](https://img.shields.io/github/forks/elijah9537/Nyay-Mitra?style=social)](https://github.com/elijah9537/Nyay-Mitra/fork)
+  
+</div>
 
 ---
 
